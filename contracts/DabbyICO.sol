@@ -38,6 +38,7 @@ contract DabbyICO is Dabby {
         ICOHalted
     }
     State public ICOState;
+   
     mapping(address => mapping(uint256 => bool)) ICOBalance;
 
     event Invest(address investor, uint256 value, uint256 tokens);
@@ -73,7 +74,7 @@ contract DabbyICO is Dabby {
         ICOHardcap = 500 ether;
         ICOMinInvestment = 0.1 ether;
         ICOMaxInvestment = 2 ether;
-        ICOState = State.beforeICOStart;
+        
     }
 
     // Function to halt the ICO
@@ -148,3 +149,5 @@ contract DabbyICO is Dabby {
         return true;
     }
 }
+
+// 0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B ICO SMART CONTRACT ADDRESS
