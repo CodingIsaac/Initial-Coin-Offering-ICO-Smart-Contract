@@ -33,7 +33,7 @@ contract Dabby is ERC20Interface {
     }
 
     function transfer(address to, uint256 tokens)
-        external
+        public
         virtual
         override
         returns (bool success)
@@ -72,7 +72,7 @@ contract Dabby is ERC20Interface {
         address from,
         address to,
         uint256 tokens
-    ) public override returns (bool success) {
+    ) public virtual  returns (bool success) {
         require(allowedTokens[from][to] >= tokens, "Token Insufficient");
         require(tokenBalance[from] >= tokens, "Poor Man, Buy More TOkens");
         tokenBalance[from] -= tokens;
@@ -80,6 +80,4 @@ contract Dabby is ERC20Interface {
         allowedTokens[from][to] -= tokens;
         return true;
     }
-
-    // 0x34B63B19C5b10201a360DdF06c52f0922785F5A8 Token Smart Contract Address
 }
