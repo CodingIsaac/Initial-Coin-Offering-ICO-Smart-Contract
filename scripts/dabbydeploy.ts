@@ -2,6 +2,8 @@ import { ethers } from "hardhat";
 
 async function main() {
   const contract = await ethers.getContractFactory("DabbyICO");
+//   const attachContract = await contract.attach("0x4458A3a6e063EAf915D7b4dbc1ae0FB524f7519f");
+
 
   const deployContract = await contract.deploy();
 
